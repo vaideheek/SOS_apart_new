@@ -1,7 +1,10 @@
 package com.example.apartment;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -13,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -24,28 +28,30 @@ import java.sql.Connection;
 
 public class LoginController /*implements Initializable */{
     @FXML
-    private Button loginButton;
+    Button loginButton;
 
     @FXML
-    private Button CreateAnAccountButton;
+    Button CreateAnAccountButton;
 
 
 
-   @FXML
-    public void loginButtonOnAction(ActionEvent event) {
+    @FXML
+    public void loginButtonOnAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("properties.fxml"));
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 400));
 
-       Stage stage = (Stage) loginButton.getScene().getWindow();
-       stage.close();
 
-   }
-
-    public void CreateAnAccountButtonOnAction(ActionEvent event){
-        Stage stage = (Stage)  CreateAnAccountButton.getScene().getWindow();
-        stage.close();
     }
 
-    
-    
+    public void CreateAnAccountButtonOnAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("createaccount.fxml"));
+        Stage stage = (Stage)  CreateAnAccountButton.getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 400));
+    }
+
+
+
 
 
 
