@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <MenuBar prefHeight="28.0" prefWidth="600.0" style="-fx-background-color: #8ab5a1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -80,18 +81,18 @@
             <TextField style="-fx-border-color: #000000#000000;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <TextField style="-fx-border-color: #000000#000000;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <TextField style="-fx-border-color: #000000#000000;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField style="-fx-border-color: #000000#000000;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <Label prefHeight="24.0" prefWidth="149.0" text="Confirm Password" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font name="Baskerville" size="18.0" />
                </font>
             </Label>
-            <TextField style="-fx-border-color: #000000#000000;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <PasswordField style="-fx-border-color: #000000;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <PasswordField style="-fx-border-color: #000000;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <ImageView fitHeight="75.0" fitWidth="84.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Downloads/logo.jpeg" />
+            <Image url="@../../image/logo.png" />
          </image>
       </ImageView>
       <Button layoutX="418.0" layoutY="349.0" mnemonicParsing="false" style="-fx-background-color: #8ab5a1; -fx-background-radius: 20px;" text="Create Account">
