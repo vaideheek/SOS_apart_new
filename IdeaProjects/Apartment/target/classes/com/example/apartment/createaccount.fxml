@@ -91,7 +91,7 @@
       </GridPane>
       <ImageView fitHeight="75.0" fitWidth="84.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Downloads/logo.jpeg" />
+            <Image url="@../"C:\Users\sarah\OneDrive\Desktop\Apartment pics\IdeaProjects\Apartment\src\main\resources\com\image\logo.png"" />
          </image>
       </ImageView>
       <Button layoutX="418.0" layoutY="349.0" mnemonicParsing="false" style="-fx-background-color: #8ab5a1; -fx-background-radius: 20px;" text="Create Account">
