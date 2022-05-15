@@ -15,11 +15,16 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apartment.LoginController">
    <children>
+      <ImageView fx:id="brandingImageView" fitHeight="400.0" layoutX="16.0" opacity="0.13" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/main.png" />
+         </image>
+      </ImageView>
       <MenuBar layoutY="1.0" style="-fx-background-color: #8ab5a1 #8ab5a1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Options">
+          <Menu mnemonicParsing="false">
             <items>
               <MenuItem mnemonicParsing="false" text="Home" />
                   <MenuItem mnemonicParsing="false" text="Properties" />
@@ -33,9 +38,9 @@
             <Insets />
          </opaqueInsets>
       </MenuBar>
-      <ImageView fitHeight="76.0" fitWidth="72.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logoimageView" fitHeight="111.0" fitWidth="175.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../src/main/image/logo.png" />
+            <Image url="@../../../../../../../../SOS_apart_new-master/IdeaProjects/Apartment/src/main/resources/com/image/logo.png" />
          </image>
       </ImageView>
       <Label layoutX="262.0" layoutY="64.0" text="Login">
@@ -53,30 +58,33 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Username">
-               <font>
-                  <Font name="Baskerville" size="18.0" />
-               </font>
-            </Label>
             <Label text="Password" GridPane.rowIndex="1">
                <font>
                   <Font name="Baskerville" size="18.0" />
                </font>
             </Label>
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="usernameTextField" promptText="Username" GridPane.columnIndex="1" />
+            <TextField fx:id="enterPasswordField" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Username">
+               <font>
+                  <Font name="Baskerville" size="18.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
-      <Button layoutX="316.0" layoutY="254.0" mnemonicParsing="false" style="-fx-background-color: #8ab5a1 #8ab5a1; -fx-background-radius: 20;" text="Create an Account">
+      <Button fx:id="CreateAnAccountButton" layoutX="317.0" layoutY="256.0" mnemonicParsing="false" onAction="#CreateAnAccountButtonOnAction" style="-fx-background-color: #8ab5a1 #8ab5a1; -fx-background-radius: 20;" text="Create an Account">
          <font>
             <Font name="Baskerville" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="loginButton" layoutX="241.0" layoutY="256.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #8ab5a1 #8ab5a1; -fx-background-radius: 20;" text="Login" />
-      <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="14.0" opacity="0.07" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../src/main/image/main.png" />
-         </image>
-      </ImageView>
+      <Button fx:id="loginButton" layoutX="241.0" layoutY="256.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #8ab5a1 #8ab5a1; -fx-background-radius: 20;" text="Login">
+         <font>
+            <Font name="Baskerville" size="16.0" />
+         </font></Button>
+      <Label fx:id="loginMessagelabel" alignment="CENTER" layoutX="128.0" layoutY="305.0" prefHeight="22.0" prefWidth="347.0">
+         <font>
+            <Font name="Baskerville" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
