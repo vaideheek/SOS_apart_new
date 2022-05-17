@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apartment.PecsController">
+   <children>
+      <MenuBar fx:id="topMenu" prefHeight="28.0" prefWidth="600.0" style="-fx-background-color: #8ab5a1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+                  <MenuItem fx:id="home" mnemonicParsing="false" onAction="#HandleHome" text="Home" />
+                  <MenuItem fx:id="addNew" mnemonicParsing="false" onAction="#HandleAddNew" text="Add New" />
+                  <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#HandleLogout" text="Logout" />
+            </items>
+          </Menu>
+        </menus>
+         <padding>
+            <Insets left="530.0" />
+         </padding>
+      </MenuBar>
+      <Label layoutX="177.0" layoutY="49.0" prefHeight="37.0" prefWidth="299.0" text="Budapest Properties">
+         <font>
+            <Font name="Baskerville" size="32.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="75.0" fitWidth="84.0" layoutX="9.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/logo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="regprop" layoutX="418.0" layoutY="349.0" mnemonicParsing="false" onAction="#RegPropOnClick" style="-fx-background-color: #8ab5a1; -fx-background-radius: 20px;" text="Register Property">
+         <font>
+            <Font name="Baskerville" size="20.0" />
+         </font>
+      </Button>
+      <TableView layoutX="5.0" layoutY="112.0" prefHeight="200.0" prefWidth="587.0">
+        <columns>
+          <TableColumn fx:id="idCol" maxWidth="70.0" prefWidth="30.0" text="ID" />
+          <TableColumn fx:id="locCol" maxWidth="144.0" prefWidth="130.0" text="Location" />
+            <TableColumn fx:id="sizeCol" maxWidth="100.0" prefWidth="54.0" text="Size" />
+            <TableColumn fx:id="typeCol" maxWidth="150.0" prefWidth="76.0" text="Type" />
+            <TableColumn fx:id="furCol" maxWidth="179.0" prefWidth="77.0" text="Furnished" />
+            <TableColumn fx:id="bedCol" maxWidth="179.0" prefWidth="125.0" text="Number of Bedrooms" />
+            <TableColumn fx:id="priceCol" maxWidth="179.0" prefWidth="94.0" text="Price" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
