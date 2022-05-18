@@ -2,10 +2,7 @@ package com.example.apartment;
 
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -42,10 +39,19 @@ public class CreateAccountController implements Initializable {
     private TextField UsernameTextField;
 
     @FXML
-    private TextField enterConfirmPasswordField;
+    private PasswordField PasswordField;
 
     @FXML
-    private TextField enterPasswordField;
+    private PasswordField ConfirmPassField;
+    @FXML
+    private Button SaveUserButton;
+    @FXML
+    private Label SavedMessageLabel;
+    @FXML
+    private Label MatchMessageLabel;
+
+
+
     @FXML
     public MenuItem back;
 
@@ -56,6 +62,51 @@ public class CreateAccountController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+    }
+
+    @FXML
+    void SaveUserButtonOnAction(ActionEvent event) {
+
+        if(PasswordField.getText().equals(ConfirmPassField.getText())){
+            MatchMessageLabel.setText("");
+            SaveUser();
+
+        }else{
+            MatchMessageLabel.setText("Password does not match");
+
+
+        }
+
+    }
+
+    public void SaveUser(){
+
+        DBconnection connect = new DBconnection();
+        Connection connectdb = connect.getConnection();
+
+        String firstname = FirstNameTextField.getText();
+        String lastname = LastNameTextField.getText();
+        String username = UsernameTextField.getText();
+        String password = PasswordField.getText();
+
+        String insertfields = "INSERT INTO new_db.user_tab(firstname,lastname,username,password)" +
+                "VALUES ('" + firstname + "','" + lastname + "','" + username + "','" + password + "');";
+        //String insertvalues = firstname + "','" + lastname + "','" + username + "','" + password + "');";
+        //String inserttodb= insertfields + insertvalues;
+
+        try{
+            Statement statement = connectdb.createStatement();
+             statement.executeUpdate(insertfields);
+
+            SavedMessageLabel.setText("User Saved Successfully");
+
+        }catch(Exception e){
+            e.printStackTrace( );
+            e.getCause();
+
+        }
+
 
     }
 
