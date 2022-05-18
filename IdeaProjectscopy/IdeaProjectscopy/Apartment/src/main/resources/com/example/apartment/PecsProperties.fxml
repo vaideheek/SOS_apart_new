@@ -8,19 +8,22 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apartment.PecsController">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apartment.PecsController">
    <children>
       <MenuBar fx:id="topMenu" prefHeight="28.0" prefWidth="600.0" style="-fx-background-color: #8ab5a1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="Options">
             <items>
                   <MenuItem fx:id="home" mnemonicParsing="false" onAction="#HandleHome" text="Home" />
-                  <MenuItem fx:id="addNew" mnemonicParsing="false" onAction="#HandleAddNew" text="Add New" />
                   <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#HandleLogout" text="Logout" />
             </items>
           </Menu>
@@ -29,7 +32,7 @@
             <Insets left="530.0" />
          </padding>
       </MenuBar>
-      <Label layoutX="218.0" layoutY="49.0" prefHeight="37.0" prefWidth="299.0" text="Pecs Properties">
+      <Label layoutX="268.0" layoutY="49.0" prefHeight="37.0" prefWidth="299.0" text="Pecs Properties">
          <font>
             <Font name="Baskerville" size="32.0" />
          </font>
@@ -39,21 +42,70 @@
             <Image url="@../../image/logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="regprop" layoutX="418.0" layoutY="349.0" mnemonicParsing="false" onAction="#RegPropOnClick" style="-fx-background-color: #8ab5a1; -fx-background-radius: 20px;" text="Register Property">
-         <font>
-            <Font name="Baskerville" size="20.0" />
-         </font>
-      </Button>
-      <TableView layoutX="5.0" layoutY="112.0" prefHeight="200.0" prefWidth="587.0">
-        <columns>
-          <TableColumn fx:id="idCol" maxWidth="70.0" prefWidth="30.0" text="ID" />
-          <TableColumn fx:id="locCol" maxWidth="144.0" prefWidth="130.0" text="Location" />
-            <TableColumn fx:id="sizeCol" maxWidth="100.0" prefWidth="54.0" text="Size" />
-            <TableColumn fx:id="typeCol" maxWidth="150.0" prefWidth="76.0" text="Type" />
-            <TableColumn fx:id="furCol" maxWidth="179.0" prefWidth="77.0" text="Furnished" />
-            <TableColumn fx:id="bedCol" maxWidth="179.0" prefWidth="125.0" text="Number of Bedrooms" />
-            <TableColumn fx:id="priceCol" maxWidth="179.0" prefWidth="94.0" text="Price" />
-        </columns>
+      <TableView fx:id="table" layoutX="383.0" layoutY="128.0" prefHeight="200.0" prefWidth="387.0">
+         <columns>
+            <TableColumn fx:id="idCol" maxWidth="70.0" prefWidth="30.0" text="ID" />
+            <TableColumn fx:id="locCol" maxWidth="144.0" prefWidth="60.0" text="Location" />
+            <TableColumn fx:id="sizeCol" maxWidth="124.0" prefWidth="42.0" text="Size" />
+            <TableColumn fx:id="typeCol" maxWidth="158.0" prefWidth="39.0" text="Type" />
+            <TableColumn fx:id="furCol" maxWidth="196.0" prefWidth="32.0" text="Furnished" />
+            <TableColumn fx:id="bedCol" maxWidth="289.0" prefWidth="118.0" text="Number of Bedrooms" />
+            <TableColumn fx:id="priceCol" maxWidth="265.0" prefWidth="65.0" text="Price" />
+         </columns>
       </TableView>
+      <GridPane layoutX="14.0" layoutY="157.0" prefHeight="154.0" prefWidth="362.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="204.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="0.0" prefWidth="201.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Location">
+               <font>
+                  <Font name="Baskerville" size="19.0" />
+               </font>
+            </Label>
+            <Label text="Size" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Baskerville" size="19.0" />
+               </font>
+            </Label>
+            <Label text="Type" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Baskerville" size="19.0" />
+               </font>
+            </Label>
+            <Label text="Furnished" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Baskerville" size="19.0" />
+               </font>
+            </Label>
+            <Label text="Number of bedroms" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Baskerville" size="19.0" />
+               </font>
+            </Label>
+            <Label text="Price" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Baskerville" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfLoc" GridPane.columnIndex="1" />
+            <TextField fx:id="tfSize" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfType" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tfFur" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tfBed" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="tfPrice" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <Button fx:id="Addbtn" layoutX="14.0" layoutY="348.0" mnemonicParsing="false" onAction="#AddBtn" text="Add" />
+      <Button fx:id="savebtn" layoutX="716.0" layoutY="348.0" mnemonicParsing="false" onAction="#SaveButtonOnAction" text="Save" />
    </children>
 </AnchorPane>
