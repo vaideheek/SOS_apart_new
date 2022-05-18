@@ -3,10 +3,13 @@ package com.example.apartment;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 import java.io.File;
@@ -43,22 +46,31 @@ public class CreateAccountController implements Initializable {
 
     @FXML
     private TextField enterPasswordField;
+    @FXML
+    public MenuItem back;
+
+    @FXML
+    public AnchorPane mainPane;
+    @FXML
+    public MenuBar topMenu;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        File brandingFILE = new File("src/main/resources/com/image/logo.png");
-        Image brandingImage = new Image(brandingFILE.toURI().toString());
-        brandingImageView.setImage(brandingImage);
+    public void initialize(URL url, ResourceBundle rb) {
+
     }
 
     @FXML
     public void CreateAccountButtonOnAction(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("properties.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("login-page.fxml"));
         Stage stage = (Stage) CreateAccountButton.getScene().getWindow();
         stage.setScene(new Scene(root, 600, 400));
 
-
-
-
     }
+
+    @FXML
+    public void Handleback(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(this.getClass().getResource("login-page.fxml"));
+        Stage Stage = (Stage)this.topMenu.getScene().getWindow();
+        Stage.setScene(new Scene(root, 600, 400));
+}
 }

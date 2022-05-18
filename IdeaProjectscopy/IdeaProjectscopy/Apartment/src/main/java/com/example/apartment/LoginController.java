@@ -26,7 +26,7 @@ import java.net.URL;
 
 import java.sql.Connection;
 
-public class LoginController /*implements Initializable */{
+public class LoginController implements Initializable {
     @FXML
     Button loginButton;
 
@@ -43,13 +43,16 @@ public class LoginController /*implements Initializable */{
 
 
     }
-
+    @FXML
     public void CreateAnAccountButtonOnAction(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("createaccount.fxml"));
         Stage stage = (Stage)  CreateAnAccountButton.getScene().getWindow();
         stage.setScene(new Scene(root, 600, 400));
     }
+    @Override
+    public void initialize (URL url, ResourceBundle rb){
 
+    }
 
 
 
